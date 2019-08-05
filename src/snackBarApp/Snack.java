@@ -5,13 +5,13 @@ public class Snack {
     //Fields
     private static int maxId = 0;
     private int id;
-    private int vendingId;
+    private String vendingId;
     private String name;
     private int quantity;
     private double cost;
 
     //Constructor
-    public Snack(String name, int quantity, double cost, int vendingId) {
+    public Snack(String name, int quantity, double cost, String vendingId) {
         maxId++;
 
         id = maxId;
@@ -29,7 +29,7 @@ public class Snack {
             return id;
         }
 
-        public int getVendingId() {
+        public String getVendingId() {
             return vendingId;
         }
 
@@ -54,17 +54,21 @@ public class Snack {
             this.cost = cost;
         }
 
-        public void setVendingId(int vendingId) {
+        public void setVendingId(String vendingId) {
             this.vendingId = vendingId;
         }
 
         //Other Methods
-        public void addQuantity(int added) {
+        public int addQuantity(int added) {
             quantity = quantity + added;
+
+            return quantity;
         }
 
-        public void buySnack(int bought) {
+        public int buySnack(int bought) {
             quantity = quantity - bought;
+
+            return quantity;
         }
 
         public double totalCost(int bought) {

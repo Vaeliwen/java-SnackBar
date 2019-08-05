@@ -39,12 +39,16 @@ public class Customer {
         }
 
         //Other Methods
-        public void addCash(double added) {
+        public double addCash(double added) {
             cashOnHand = cashOnHand + added;
+
+            return cashOnHand;
         }
 
-        public void buyItem(double total) {
+        public double buyItem(double total) {
             cashOnHand = cashOnHand - total;
+
+            return cashOnHand;
         }
 
 }
